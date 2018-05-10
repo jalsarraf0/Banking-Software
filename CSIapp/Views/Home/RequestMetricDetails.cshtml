@@ -1,0 +1,78 @@
+@model IEnumerable<BigDataModel>
+
+@{
+    ViewData["Title"] = "Request Metric Details";
+}
+
+<h2>Search Results</h2>
+@if (Model.Count() == 0)
+{
+<div class="col-md-5">
+    <p>No results matching those terms were found!</p>
+    <p>Please Try Again</p>
+</div>
+}
+else{
+<div class="col-md-5">
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetricDetail.RequestMetricId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetricDetail.RequestMetricsDetailsId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetricDetail.RequestDetail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetricDetail.RequestType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetricDetail.BeginTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetricDetail.EndTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetricDetail.RequestTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetricDetail.IsError)
+                </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetricDetail.RequestMetricId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetricDetail.RequestMetricsDetailsId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetricDetail.RequestDetail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetricDetail.RequestType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetricDetail.BeginTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetricDetail.EndTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetricDetail.RequestTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetricDetail.IsError)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+}

@@ -1,0 +1,4 @@
+C:\Users\Max\Desktop\cidm4390-spring2018-winners\.vs\CSIapp\lut\0\i\CSIapp\Debug\netcoreapp2.0\CSIapp.csprojResolveAssemblyReference.cache
+C:\Users\Max\Desktop\cidm4390-spring2018-winners\.vs\CSIapp\lut\0\i\CSIapp\Debug\netcoreapp2.0\CSIapp.csproj.CoreCompileInputs.cache
+C:\Users\Max\Desktop\cidm4390-spring2018-winners\.vs\CSIapp\lut\0\i\CSIapp\Debug\netcoreapp2.0\CSIapp.AssemblyInfoInputs.cache
+C:\Users\Max\Desktop\cidm4390-spring2018-winners\.vs\CSIapp\lut\0\i\CSIapp\Debug\netcoreapp2.0\CSIapp.AssemblyInfo.cs

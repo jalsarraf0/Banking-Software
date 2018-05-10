@@ -1,0 +1,132 @@
+@model IEnumerable<BigDataModel>
+
+@{
+    ViewData["Title"] = "Search Results";
+}
+
+<h2>Search Results</h2>
+@if (Model.Count() == 0)
+{
+<div class="col-md-5">
+    <p>No results matching those terms were found!</p>
+    <p>Please Try Again</p>
+</div>
+}
+else{
+<div class="col-md-5">
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.RequestMetricId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.Timestamp)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.SourceIp)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.SourcePort)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.ResponseCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.Duration)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.Channel)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.Apiversion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.Apimethod)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.BankNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.ServerName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.UserId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.EmpId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.SessionId)
+                </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <a asp-controller="Home" asp-action="RequestMetricDetails" asp-route-RequestMetricId="@item.RequestMetric.RequestMetricId">@Html.DisplayFor(modelItem => item.RequestMetric.RequestMetricId)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.Timestamp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.SourceIp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.SourcePort)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.ResponseCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.Channel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.Apiversion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.Apimethod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.BankNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.ServerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.EmpId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.SessionId)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+}
+<form asp-controller="Home" asp-action="SearchResults" method="post">
+<div class="col-md-11">
+@if(ViewBag.Page >0)
+{
+    <a href="@Url.Action("Index", new {page = ViewBag.Page -1})"
+        class = "btn btn-default">
+        &laquo; Prev
+        </a>
+}
+@if(ViewBag.Page < ViewBag.MaxPage)
+{
+    <a href="@Url.Action("Index", new {page = ViewBag.Page +1})"
+        class = "btn btn-default">
+        Next &raquo;
+        </a>
+}
+</div>
+</form>

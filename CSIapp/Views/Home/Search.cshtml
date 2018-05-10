@@ -1,0 +1,72 @@
+﻿@model CSIapp.SearchViewModel
+@{
+    ViewData["Title"] = "Search";
+}
+<h2>@ViewData["Title"]</h2>
+
+
+<div class="col-md-3">
+    <div class="form-area">
+        <form asp-controller="Home" asp-action="SearchResults" method="post">
+            <div class="form-group">
+                <label asp-for="SearchBankNumber">Bank Number</label>
+                <input asp-for="SearchBankNumber" type="text"/><br /><br />       
+                <label asp-for="SearchUserId">UserID</label><br />
+                <input asp-for="SearchUserId" type="text"/><br /><br />
+                <label asp-for="SearchApimethod">API Method</label><br />
+                <select asp-for="SearchApimethod">
+                    <option value="">All</option>
+                    <option value="Navigation">Navigation</option>
+                    <option value="AuthenticateUser">AuthenticateUser</option>
+                    <option value="AuthenticateRequest">AuthenticateRequest</option>
+                    <option value="Continue">Continue</option>
+                    <option value="UploadMessageAttachment">UploadMessageAttachment</option>
+                    <option value="UpdateAlert">UpdateAlert</option>
+                    <option value="SendSecureForm">SendSecureForm</option>
+                    <option value="GetBankSettings">GetBankSettings</option>
+                    <option value="GetAccounts">GetAccounts</option>
+                    <option value="GetCards">GetCards</option>
+                    <option value="GetAlerts">GetAlerts</option>
+                    <option value="GetAlertHistory">GetAlertHistory</option>
+                    <option value="GetDevices">GetDevices</option>
+                    <option value="GetUserThreads">GetUserThreads</option>
+                    <option value="GetBusinessBankingTotals">GetBusinessBankingTotals</option>
+                    <option value="GetExternalAccounts">GetExternalAccounts</option>
+                    <option value="GetGeezeoSSOLink">GetGeezeoSSOLink</option>
+                    <option value="GetPayeeImage">GetPayeeImage</option>
+                    <option value="GetCustomTextImages">GetCustomTextImages</option>
+                    <option value="GetPayees">GetPayees</option>
+                    <option value="GetAlertHistory">GetAlertHistory</option>
+                    <option value="GetAllCardAlertInfo">GetAllCardAlertInfo</option>
+                    <option value="GetFromAcctsForTransfer">GetFromAcctsForTransfer</option>
+                    <option value="GetConfirmedMoneyMovements">GetConfirmedMoneyMovements</option>
+                    <option value="GetPendingMoneyMovements">GetPendingMoneyMovements</option>
+                    <option value="GetUnapprovedWires">GetUnapprovedWires</option>
+                    <option value="BillPayPmtHistSrch">BillPayPmtHistSrch</option>
+                    <option value="BillPayPayeeInquiry">BillPayPayeeInquiry</option>
+                    <option value="BillPayGetPayFromAccts">BillPayGetPayFromAccts</option>
+                    <option value="BillPayPayeeSearch">BillPayPayeeSearch</option>
+                    <option value="BillPayValidDates">BillPayValidDates</option>
+                    <option value="BillPaySchedPmtAdd">BillPaySchedPmtAdd</option>
+                    <option value="SaveInternationalWires">SaveInternationalWires</option>
+                </select><br />
+                <label asp-for="SearchIsError">Known Error?</label>
+                <select asp-for="SearchIsError">
+                    <option value= false>No</option>
+                    <option value= true>Yes</Option>
+                </select><br />
+
+                <label asp-for="SearchStartTime">Start Time</label>
+                <input asp-for="SearchStartTime" type="text" placeholder="00/00/0000 00:00 AM"/><br />
+
+
+                <label asp-for="SearchEndTime">End Time</label>
+                <input asp-for="SearchEndTime" type="text" placeholder="00/00/0000 00:00 PM"/>
+
+            </div><br />
+            <button type="submit" value="submit">
+                Search
+            </button>
+        </form>  
+    </div>
+</div>

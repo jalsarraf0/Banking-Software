@@ -1,0 +1,142 @@
+﻿@model IEnumerable<BigDataModel>
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h2>Search Results</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.Timestamp)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.SourceIp)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.SourcePort)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.ResponseCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.Duration)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.Channel)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.Apiversion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.Apimethod)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.BankNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.ServerName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.UserId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.EmpId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetric.SessionId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetricDetail.RequestType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetricDetail.BeginTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetricDetail.EndTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetricDetail.RequestTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestMetricDetail.IsError)
+                </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.Timestamp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.SourceIp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.SourcePort)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.ResponseCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.Channel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.Apiversion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.Apimethod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.BankNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.ServerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.EmpId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetric.SessionId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetricDetail.RequestType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetricDetail.BeginTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetricDetail.EndTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetricDetail.RequestTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestMetricDetail.IsError)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div class="col-md-11">
+
+    <a href="@Url.Action("Index", new {page = ViewBag.Page -1})"
+        class = "btn btn-default">
+        &laquo; Prev
+        </a>
+
+
+    <a href="@Url.Action("Index", new {page = ViewBag.Page +1})"
+        class = "btn btn-default">
+        Next &raquo;
+        </a>
+
+</div>
